@@ -10,12 +10,12 @@ Objectif : Créer une animation en boucle où le texte "안녕" apparaît point 
 ### Scénario et mise en scène
 
 Écran noir, les points apparaissent un par un pour former progressivement le mot "안녕"
-Les points clignotent légèrement à leur apparition
-->
+<br>Les points clignotent légèrement à leur apparition
+<br>->
 Maintenir brièvement le texte complet pour transmettre le message
-->
+<br>->
 Les points disparaissent un par un, le texte se dissout progressivement
-->
+<br>->
 Répétition du cycle : apparition → maintien → disparition
 
 ### Plan technique
