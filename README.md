@@ -5,6 +5,7 @@ Titre du projet: Animation en boucle "안녕" (points apparaissant et disparaiss
 #### Aperçu du projet
 
 Objectif : Créer une animation en boucle où le texte "안녕" apparaît point par point puis disparaît progressivement dans un environnement 320×200 / 16 couleurs
+
 Concept : Utiliser le mot coréen "안녕" pour symboliser le début et la fin(du semestre),les lettres se complètent et disparaissent point par point
 
 #### Scénario et mise en scène
