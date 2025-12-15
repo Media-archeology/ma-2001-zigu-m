@@ -31,8 +31,8 @@ Environnement : Émulateur Hatari, TOS 1.04 ou EmuTOS, CPU 8MHz, affichage PAL 5
 Plan de travail DAY 1 — Installation et affichage minimal
 
 Objectif: Configurer Hatari pour que le programme s’exécute et que l’écran affiche quelque chose
-	1.	Installer et configurer Hatari
-	2.	Charger l’image TOS
-	3.	Créer le projet dans VS Code
-	4.	Écrire un programme C minimal : écran noir → changement de couleur de fond
-	5.	Appliquer le vsync
+	<br>1.	Installer et configurer Hatari
+	<br>2.	Charger l’image TOS
+	<br>3.	Créer le projet dans VS Code
+	<br>4.	Écrire un programme C minimal : écran noir → changement de couleur de fond
+	<br>5.	Appliquer le vsync
