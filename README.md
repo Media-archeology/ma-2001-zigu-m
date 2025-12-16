@@ -1,6 +1,6 @@
 # Plan de projet d'animation Atari 1040STF
 
-Titre du projet: Animation en boucle "안녕" (points apparaissant et disparaissant)
+### Titre du projet: Animation en boucle "안녕" (points apparaissant et disparaissant)
 
 ### Aperçu du projet
 
@@ -39,3 +39,19 @@ Objectif: Configurer Hatari pour que le programme s’exécute et que l’écran
 	3.	Créer le projet dans VS Code
 	4.	Écrire un programme C minimal : écran noir → changement de couleur de fond
 	5.	Appliquer le vsync
+
+### Processus
+
+Au départ, le projet devait être réalisé à l’aide du compilateur le plus traditionnellement utilisé pour le développement sur Atari ST :
+VBCC (Volker Barthelmann C Compiler).
+
+VBCC prend officiellement en charge la cible Atari ST / TOS (m68k-atari), permet de générer des fichiers .PRG exécutables sur du matériel Atari réel, et constitue un outil fréquemment utilisé avec l’émulateur Hatari.
+
+#### Problèmes rencontrés
+	•	Incompatibilité de plateforme
+La majorité des distributions officielles de VBCC sont destinées à Atari MiNT ou à des systèmes Linux x86 anciens, ce qui les rend directement incompatibles avec l’environnement Apple Silicon (M1/M2, ARM).
+	•	Séparation stricte entre le compilateur et les cibles
+L’architecture de VBCC impose une installation distincte du compilateur, des définitions de cibles et des bibliothèques, ce qui complique fortement la configuration et l’utilisation dans un contexte de projet pédagogique.
+
+#### Conclusion
+<br>→ Transition vers une compilation croisée basée sur GCC
