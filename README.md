@@ -48,8 +48,10 @@ VBCC (Volker Barthelmann C Compiler).
 VBCC prend officiellement en charge la cible Atari ST / TOS (m68k-atari), permet de générer des fichiers .PRG exécutables sur du matériel Atari réel, et constitue un outil fréquemment utilisé avec l’émulateur Hatari.
 
 #### Problèmes rencontrés
-	•	Incompatibilité de plateforme - La majorité des distributions officielles de VBCC sont destinées à Atari MiNT ou à des systèmes Linux x86 anciens, ce qui les rend directement incompatibles avec l’environnement Apple Silicon (M1/M2, ARM).
-	<br>•	Séparation stricte entre le compilateur et les cibles - L’architecture de VBCC impose une installation distincte du compilateur, des définitions de cibles et des bibliothèques, ce qui complique fortement la configuration et l’utilisation dans un contexte de projet pédagogique.
+	•	Incompatibilité de plateforme
+		La majorité des distributions officielles de VBCC sont destinées à Atari MiNT ou à des systèmes Linux x86 anciens, ce qui les rend directement incompatibles avec l’environnement Apple Silicon (M1/M2, ARM).
+	•	Séparation stricte entre le compilateur et les cibles
+		L’architecture de VBCC impose une installation distincte du compilateur, des définitions de cibles et des bibliothèques, ce qui complique fortement la configuration et l’utilisation dans un contexte de projet pédagogique.
 
 #### Conclusion
 <br>→ Transition vers une compilation croisée basée sur GCC
