@@ -1,44 +1,92 @@
 # Plan de projet d'animation Atari 1040STF
 
-### Titre du projet: Animation en boucle "안녕" (points apparaissant et disparaissant)
+### Titre du projet: Strawberry Escape
 
 ### Aperçu du projet
 
-Objectif : Créer une animation en boucle où le texte "안녕" apparaît point par point puis disparaît progressivement dans un environnement 320×200 / 16 couleurs
-<br>Concept : Utiliser le mot coréen "안녕" pour symboliser le début et la fin(du semestre),les lettres se complètent et disparaissent point par point
+- Jeu d’action de style arcade où le joueur contrôle un personnage pour éviter les blocs de fraises tombant du haut de l’écran
+- **Plateforme :** Atari ST
+- **Objectif final :** Exécutable sur un véritable Atari 1040STF
+- **Gameplay principal :** Éviter les blocs (fraises) en se déplaçant à gauche et à droite
 
 ### Scénario et mise en scène
 
-Écran noir, les points apparaissent un par un pour former progressivement le mot "안녕"
-<br>Les points clignotent légèrement à leur apparition
-<br>->
-Maintenir brièvement le texte complet pour transmettre le message
-<br>->
-Les points disparaissent un par un, le texte se dissout progressivement
-<br>->
-Répétition du cycle : apparition → maintien → disparition
+Le joueur doit déplacer le personnage à gauche et à droite en bas de l’écran pour éviter les fraises tombant du haut. Le déroulement du jeu est le suivant :
 
-### Plan technique
+1. ### Instructions de jeu
 
-Tableau de points : Décomposer les lettres '안' et '녕' en points, créer des tableaux de structures Dot
+2. ### Écran de démarrage
 
-Contrôle de l'animation : La variable displayCount contrôle le nombre de points affichés, points apparaissant/disparaissant à chaque frame
+- Affichage du titre principal “Strawberry Escape !” et du bouton START
+- Le joueur appuie sur la barre d’espace ou sur Entrée pour commencer le jeu
 
-Timing frames/boucle : Boucle naturelle basée sur 50Hz
+3. ### Gameplay
 
-Environnement : Émulateur Hatari, TOS 1.04 ou EmuTOS, CPU 8MHz, affichage PAL 50Hz
+- Le joueur déplace le personnage avec les flèches gauche et droite
+- Des blocs de fraises tombent à des positions aléatoires à intervalles réguliers
+- Collision avec un bloc = fin du jeu
+- Éviter les blocs augmente le score
 
-### Plan de travail 
+4. ### Écran de fin de jeu
 
-Objectif: Configurer Hatari pour que le programme s’exécute et que l’écran affiche quelque chose
+- Affichage du texte “GAME OVER” et du score
+- Bouton RESTART avec image du personnage
 
-#### DAY 1 — Installation et affichage minimal
+5. ### Crédits
 
-	1.	Installer et configurer Hatari
-	2.	Charger l’image TOS
-	3.	Créer le projet dans VS Code
-	4.	Écrire un programme C minimal : écran noir → changement de couleur de fond
-	5.	Appliquer le vsync
+### Éléments techniques
+
+#### Graphismes
+
+- Résolution 320×200 utilisant la palette 16 couleurs de l’Atari ST
+- Les sprites du personnage et des blocs sont stockés en mode plan (4 bits)
+- Gestion de la transparence et double buffering basé sur un tampon pour minimiser le clignotement
+
+#### Rendu du texte
+
+- Utilisation de caractères 8×8 pixels basés sur la police système
+- Fonctionnalités de centrage et double taille (drawText2x, drawTextCentered)
+- Support des majuscules, chiffres et certains caractères spéciaux
+
+#### Logique du jeu
+
+- Basée sur une machine à états : START → PLAYING → GAMEOVER
+- Vérification des collisions avec la méthode AABB
+- Apparition aléatoire des blocs et système de score
+
+#### Gestion des entrées
+
+- Gestion du clavier Atari ST (Cconis, Cnecin)
+- Déplacement gauche/droite, démarrage/restart, sortie (Esc)
+
+### Plan
+
+1. #### Conception du jeu
+
+- Choisir l’idée d’un jeu d’arcade simple basé sur l’évitement
+- Déterminer la disposition de l’écran, le personnage, la taille et la vitesse des blocs
+
+2. #### Création graphique
+
+- Dessiner le personnage et les blocs pixel par pixel
+- Convertir les fichiers png en données plan 4 bits
+
+3. #### Implémentation du texte et des polices
+
+- Écrire des fonctions pour dessiner les caractères en utilisant la police système
+- Implémenter les fonctions de centrage et d’agrandissement
+
+4. #### Implémentation de la logique du jeu
+
+- Concevoir la structure de la machine à états
+- Implémenter la vérification des collisions et l’apparition des blocs
+- Mettre en place le système de score et les conditions de fin de jeu
+
+5. #### Tests et débogage
+
+- Vérifier l’affichage des sprites et corriger les erreurs de buffering
+- Ajuster la réactivité des entrées clavier
+- Vérifier les éléments UI tels que le centrage et l’agrandissement
 
 ### Processus
 
