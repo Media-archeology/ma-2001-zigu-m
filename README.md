@@ -103,3 +103,8 @@ VBCC prend officiellement en charge la cible Atari ST / TOS (m68k-atari), permet
 
 #### Conclusion
 <br>→ Transition vers une compilation croisée basée sur GCC
+
+#### Les sprites
+<img src="../ma-2001-zigu-m/img/player.png" title="" alt="player.png" width="32">
+<img src="../ma-2001-zigu-m/img/gameover.png" title="" alt="gameover.png" width="32">
+<img src="../ma-2001-zigu-m/img/block.png" title="" alt="block.png" width="16">
